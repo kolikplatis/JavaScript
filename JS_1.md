@@ -114,3 +114,88 @@
         };
 
         checkAge();
+
+
+Напишите валидационный скрипт используя функции   
+1. Скрипт должен на вход принимать строку.  
+2. После проверки строки выводить в консоль сообщение, где будет конкретно написано, что не так в введённой строке.  
+3. Минимум 5 символов в строке.  
+4. Максимум 64 символа в строке.  
+5. В строке должны быть буквы.  
+6. Должна быть хотя бы одна буква в верхнем регистре.  
+7. Должна быть хотя бы одна цифра.  
+8. Должна быть хотя бы одна @.  
+9. Строка не должна быть пустой.  
+
+        function isNotEmpty(value) {
+            return value.length > 0;
+        };
+
+        function isMinLength(value, minLength) {
+            return value.length >= minLength;
+        };
+
+        function isMaxLength(value, maxLength) {
+            return value.length <= maxLength;
+        };
+
+        function containLetters(value) {
+            const regex = /[a-zA-Z]/;
+            return regex.test(value);
+        };
+
+        function containUppercase(value) {
+            const regex = /[A-Z]/;
+            return regex.test(value);
+        };
+
+        function containDigit(value) {
+            const regex = /\d/;
+            return regex.test(value);
+        };
+
+        function containAtsymbols(value) {
+            const regex = /@/;
+            return regex.test(value);
+        };
+
+        const validator = function(yourString) {
+
+            if (!isNotEmpty(yourString)) {
+                console.log("Строка не должна быть пустой");
+                return;
+            };
+
+            if (!isMinLength(yourString, 5)) {
+                console.log("Строка должна быть не менее 5 символов");
+                return;
+            };
+
+            if (!isMaxLength(yourString, 64)) {
+                console.log("Строка должна быть не более 64 символов");
+                return;
+            };
+
+            if (!containLetters(yourString)) {
+                console.log("Строка должна содержать буквы");
+                return;
+            };
+
+            if (!containUppercase(yourString)) {
+                console.log("Строка должна содержать хотя бы 1 букву в верхнем регистре");
+                return;
+            };
+
+            if (!containDigit(yourString)) {
+                console.log("Строка должна содержать хотя бы 1 цифру");
+                return;
+            };
+
+            if (!containAtsymbols(yourString)) {
+                console.log("Строка должна содержать хотя бы 1 символ '@'");
+                return;
+            };
+
+        };   
+
+        validator("Oleg");
