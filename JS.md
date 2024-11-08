@@ -34,6 +34,7 @@
 32 |  Если age_1  > age_3, вывести в консоль “Keep calm and look Culture channel”. | else if (age_1 > age_3) {console.log("Keep calm and look Culture channel")}
 33 |  Иначе выводите “Technical work”. | else {console.log("Technical work");}
 
+---  
 
 **Задания с разным количеством звездочек**  
 
@@ -113,8 +114,9 @@
                 }
         };
 
-        checkAge();
+        checkAge();  
 
+---  
 
 Напишите валидационный скрипт используя функции   
 1. Скрипт должен на вход принимать строку.  
